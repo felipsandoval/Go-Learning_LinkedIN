@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
-
+	"unicode"
 	"github.com/jboursiquot/go-proverbs"
 )
 
@@ -49,11 +49,35 @@ func getRandomProverb() (result string) {
 	return
 }
 
+// 2nd teaching lesson
+var d, e, f int
+var x, y, z = true, false, true
+
+const pi = 3.14159
+const a rune = 'a'
+
+// a rune constast for the letter 'a' to print only UNICODE char
+// Solamente acepta comillas simples y no dobles
+
 func main() {
 	//fmt.Println(greet())
 	//fmt.Println(greetWithName("Claudia"))
 	//fmt.Println(greetWithNameAndAge("David", 29))
 	//fmt.Println(divide(10, 2))
 	//fmt.Println(divide(10, 0))
-	fmt.Println(getRandomProverb())
+	//fmt.Println(getRandomProverb())
+	//d = 1
+	//fmt.Println("d: %d\n", d)
+	//x, y, z := 1, 1.25, "hello"
+	//fmt.Printf("x: %x\n", x)
+	//fmt.Println("x, y, z:", x, y, z)
+	//printVars()
+	fmt.Printf("pi: %v - %T\n", pi, pi)
+	fmt.Printf("pi: %c - %T\n", a, a)
+	unicode.IsLetter(a)
+}
+
+// This will print the variables that defines as "global", not the variables within func
+func printVars() {
+	fmt.Println("x, y, z:", x, y, z)
 }
