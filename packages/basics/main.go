@@ -5,6 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
+
+	"github.com/jboursiquot/go-proverbs"
 )
 
 // importing the fmt package from the pck go website
@@ -41,10 +43,17 @@ func divide(a, b int) (int, error) {
 	// nil es el valor cero para punteros, interfaces, mapas, slices, canales y funciones; y corresponde a la representación de un valor no inicializado
 }
 
+// Challenge #1
+func getRandomProverb() (result string) {
+	result = proverbs.Random().Saying
+	return
+}
+
 func main() {
 	//fmt.Println(greet())
 	//fmt.Println(greetWithName("Claudia"))
 	//fmt.Println(greetWithNameAndAge("David", 29))
-	fmt.Println(divide(10, 2))
-	fmt.Println(divide(10, 0))
+	//fmt.Println(divide(10, 2))
+	//fmt.Println(divide(10, 0))
+	fmt.Println(getRandomProverb())
 }
