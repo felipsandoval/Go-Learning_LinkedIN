@@ -5,7 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
-	"unicode"
+
+	//"unicode"
 	"github.com/jboursiquot/go-proverbs"
 )
 
@@ -72,12 +73,47 @@ func main() {
 	//fmt.Printf("x: %x\n", x)
 	//fmt.Println("x, y, z:", x, y, z)
 	//printVars()
-	fmt.Printf("pi: %v - %T\n", pi, pi)
-	fmt.Printf("pi: %c - %T\n", a, a)
-	unicode.IsLetter(a)
+	//fmt.Printf("pi: %v - %T\n", pi, pi)
+	//fmt.Printf("pi: %c - %T\n", a, a)
+	//unicode.IsLetter(a)
+	//a := 42.5
+	//b := uint(a)
+	// It lost precision when you convert
+	//fmt.Printf("%v=%T, %v=%T\n", a, a, b, b)
+	pointersExample()
 }
 
 // This will print the variables that defines as "global", not the variables within func
 func printVars() {
 	fmt.Println("x, y, z:", x, y, z)
+}
+
+func convertVars() {
+	a := 42.5
+	b := uint(a)
+	// It lost precision when you convert
+	fmt.Printf("%v=%T, %v=%T\n", a, a, b, b)
+}
+
+//Pointers function
+
+func pointersExample() *int {
+	// create a variable of type *T where T is an int
+	var a *int
+
+	// declare and assign b variable of type int
+	b := 100
+
+	// assign the address of b to a
+	a = &b
+
+	// print out the value of a which is the address of b
+	// La ubicación en memoria
+	fmt.Println(a)
+
+	// print out the value at the address of b
+	// el valor en memoria
+	fmt.Println(*a)
+
+	return a
 }
