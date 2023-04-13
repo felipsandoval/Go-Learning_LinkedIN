@@ -109,11 +109,11 @@ func pointersExample() *int {
 
 	// print out the value of a which is the address of b
 	// La ubicación en memoria
-	fmt.Println(a)
+	//fmt.Println(a)
 
 	// print out the value at the address of b
 	// el valor en memoria
-	fmt.Println(*a)
+	//fmt.Println(*a)
 
 	return a
 }
