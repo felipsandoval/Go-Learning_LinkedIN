@@ -26,8 +26,22 @@ func main() {
 	// verbose representation of the map
 	fmt.Printf("%#v\n", authors)
 	fmt.Printf("%v\n", authors)
-	fmt.Println(authors["tm"])
-	fmt.Println("Not exist: ", authors["jr"])
+
 	// read a value from the map with a known key
-	//
+	fmt.Println(authors["cb"])
+	fmt.Println("Not exist: ", authors["jr"]) // Non existent value from the map
+	a, ok := authors["jr"]
+	fmt.Printf("a = %v, ok = %v\n", a, ok) // Check if a value is real and exists within the map. The OK is a boolean
+
+	//update a value from the map
+	authors["cb"] = author{name: "Charles Beck"}
+	fmt.Println(authors["cb"])
+
+	//delete a value from a map
+
+	delete(authors, "cb")
+	fmt.Printf("%v\n", authors)
+
+
+
 }
