@@ -40,6 +40,7 @@ func main() {
 	// create a new library
 	//
 	library := make(library)
+	// library := library() or this one too.
 	// add 2 books to the library by the same author
 	//
 	/*var author_1 = author{name: "JK Rowling"}
