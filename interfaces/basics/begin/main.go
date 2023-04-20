@@ -2,16 +2,29 @@
 package main
 
 // define a humanoid interface with speak and walk methods returning string
-
+type humanoid interface{
+	speak()
+	walk()
+}
 // define a person type that implements humanoid interface
+type person struct{name string}
+
+func (p person) speak() {fmt.Printf("%s speaking...", p.name)}
+
+func (p person) walk() {fmt.Printf("%s walking...", p.name)}
 
 // implement the Stringer interface for the person type
 
+
 // define a dog type that can walk but not speak
+type dog struct{}
+
+func (d dog) walk() {fmt.Println("Dog is walking")}
 
 func main() {
 	// invoke with a person
-	// doHumanThings(person{})
+	p := person{name: "Philippe"}
+	doHumanThings(person{})
 
 	// can we invoke with a dog?
 	// doHumanThings(dog{})
@@ -19,7 +32,7 @@ func main() {
 	// fmt.Println(p)
 }
 
-// func doHumanThings(h humanoid) {
-// 	h.speak()
-// 	h.walk()
-// }
+func doHumanThings(h humanoid) {
+	h.speak()
+	h.walk()
+}
