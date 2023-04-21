@@ -1,33 +1,41 @@
 // interfaces/basics/begin/main.go
 package main
 
+import (
+	"fmt"
+)
+
 // define a humanoid interface with speak and walk methods returning string
-type humanoid interface{
+type humanoid interface {
 	speak()
 	walk()
 }
+
 // define a person type that implements humanoid interface
-type person struct{name string}
+type person struct{ name string }
 
-func (p person) speak() {fmt.Printf("%s speaking...", p.name)}
+func (p person) speak() { fmt.Printf("%s speaking...", p.name) }
 
-func (p person) walk() {fmt.Printf("%s walking...", p.name)}
+func (p person) walk() { fmt.Printf("%s walking...", p.name) }
 
 // implement the Stringer interface for the person type
 
+func (p person) String() string {
+	return fmt.Sprintf("Hello, my name is %s", p.name)
+}
 
 // define a dog type that can walk but not speak
 type dog struct{}
 
-func (d dog) walk() {fmt.Println("Dog is walking")}
+func (d dog) walk() { fmt.Println("Dog is walking") }
 
 func main() {
 	// invoke with a person
 	p := person{name: "Philippe"}
-	doHumanThings(person{})
-
+	//doHumanThings(p)
+	fmt.Println(p)
 	// can we invoke with a dog?
-	// doHumanThings(dog{})
+	//doHumanThings(dog{})
 
 	// fmt.Println(p)
 }
